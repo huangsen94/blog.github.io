@@ -167,7 +167,7 @@
             <h2 id="生产问题现象"><a href="#生产问题现象" class="headerlink" title="生产问题现象"></a>生产问题现象</h2><p>验证码使用的中文字体加载不出来。</p>
 <h2 id="分析步骤"><a href="#分析步骤" class="headerlink" title="分析步骤"></a>分析步骤</h2><ol>
 <li><p>先取服务器日志查看是否有异常报错。发现异常信息如下：</p>
-<p><img src="https://wx2.sinaimg.cn/mw1024/006IOpkNgy1gujyjmwqzpj60it03sgm702.jpg" alt="image-20210601115430412"></p>
+<p><img src="https://z3.ax1x.com/2021/09/18/4QB39A.png"></p>
 </li>
 <li><p>根据日志信息，到网上查询，有相关结果怀疑是编译的jdk版本和运行的jdk版本不一致导致的。的确，编译打包的jdk版本是1.8_144，生产运行的是1.8_291。顺着这里方向，尝试在本地复现这个问题。下载1.8_291jdk，使用生产的部署包，在本地的tomcat启动，居然复现了这个问题，此时更加印证了是jdk版本不一致的猜想。</p>
 </li>
@@ -181,7 +181,7 @@
 <p>具体操作网上有很多详细的说明，这里不再赘述。</p>
 </li>
 <li><p>通过调试代码，发现最根本的报错原因在这里，再根据异常信息，到网上查询。有结果指出是maven打包，filtering配置将字体文件重新编码后导致字体文件损坏。</p>
-<p><img src="https://wx3.sinaimg.cn/mw1024/006IOpkNgy1gujyjmyp38j60sv0ljjua02.jpg" alt="image-20210604091415051"></p>
+<p><img src="https://z3.ax1x.com/2021/09/18/4QB81I.png"></p>
 </li>
 </ol>
 

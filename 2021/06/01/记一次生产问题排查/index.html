@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="Hexo Theme Keep">
     <meta name="description" content="Hexo Theme Keep">
-    <meta name="author" content="watson">
+    <meta name="author" content="cookie是只猫">
     
     <title>
         
@@ -16,14 +16,14 @@
     
 <link rel="stylesheet" href="/blog.github.io/css/style.css">
 
-    <link rel="shortcut icon" href="/blog.github.io/images/logo.svg">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/huangsen94/CDN/blog/head.jpg">
     
 <link rel="stylesheet" href="/blog.github.io/css/font-awesome.min.css">
 
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"huangsen94.github.io","root":"/blog.github.io/","language":"zh"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/head.jpg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"https://cdn.jsdelivr.net/gh/huangsen94/CDN/blog/head.jpg","favicon":"https://cdn.jsdelivr.net/gh/huangsen94/CDN/blog/head.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -124,11 +124,11 @@
         
             <div class="article-header">
                 <div class="avatar">
-                    <img src="/blog.github.io/images/head.jpg">
+                    <img src="https://cdn.jsdelivr.net/gh/huangsen94/CDN/blog/head.jpg">
                 </div>
                 <div class="info">
                     <div class="author">
-                        <span class="name">watson</span>
+                        <span class="name">cookie是只猫</span>
                         
                             <span class="author-label">Lv1</span>
                         
@@ -167,7 +167,7 @@
             <h2 id="生产问题现象"><a href="#生产问题现象" class="headerlink" title="生产问题现象"></a>生产问题现象</h2><p>验证码使用的中文字体加载不出来。</p>
 <h2 id="分析步骤"><a href="#分析步骤" class="headerlink" title="分析步骤"></a>分析步骤</h2><ol>
 <li><p>先取服务器日志查看是否有异常报错。发现异常信息如下：</p>
-<p><img src="https://z3.ax1x.com/2021/09/18/4QB39A.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huangsen94/CDN/blog/2021-09-18/image-20210601115430412.png"></p>
 </li>
 <li><p>根据日志信息，到网上查询，有相关结果怀疑是编译的jdk版本和运行的jdk版本不一致导致的。的确，编译打包的jdk版本是1.8_144，生产运行的是1.8_291。顺着这里方向，尝试在本地复现这个问题。下载1.8_291jdk，使用生产的部署包，在本地的tomcat启动，居然复现了这个问题，此时更加印证了是jdk版本不一致的猜想。</p>
 </li>
@@ -181,7 +181,7 @@
 <p>具体操作网上有很多详细的说明，这里不再赘述。</p>
 </li>
 <li><p>通过调试代码，发现最根本的报错原因在这里，再根据异常信息，到网上查询。有结果指出是maven打包，filtering配置将字体文件重新编码后导致字体文件损坏。</p>
-<p><img src="https://z3.ax1x.com/2021/09/18/4QB81I.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huangsen94/CDN/blog/2021-09-18/image-20210604091415051.png"></p>
 </li>
 </ol>
 
@@ -247,7 +247,7 @@
             
               <span>2020</span>&nbsp;-&nbsp;
             
-            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">watson</a>
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">cookie是只猫</a>
         </div>
         
         <div class="theme-info info-item">
